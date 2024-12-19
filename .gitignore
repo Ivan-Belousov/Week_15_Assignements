@@ -16,6 +16,12 @@
 
 # Recordings can get excessive in size
 /[Rr]ecordings/
+# Ignore Unity-specific .meta files (unless required)
+*.meta
+
+# Ignore accidentally saved versions of the .gitignore file
+*.save
+*.gitignore.save
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
