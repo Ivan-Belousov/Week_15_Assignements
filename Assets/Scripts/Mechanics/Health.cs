@@ -1,60 +1,67 @@
 using System;
 using Platformer.Gameplay;
 using UnityEngine;
+using UnityEngine.UI;
 using static Platformer.Core.Simulation;
 
 namespace Platformer.Mechanics
 {
-    /// <summary>
-    /// Represebts the current vital statistics of some game entity.
-    /// </summary>
     public class Health : MonoBehaviour
     {
-        /// <summary>
-        /// The maximum hit points for the entity.
-        /// </summary>
-        public int maxHP = 1;
+        public int maxHP = 2; // Default maximum health points
+        public Slider healthBar; // Reference to the health bar slider
 
-        /// <summary>
-        /// Indicates if the entity should be considered 'alive'.
-        /// </summary>
         public bool IsAlive => currentHP > 0;
 
-        int currentHP;
+        public int currentHP { get; private set; } // Public getter, private setter
 
-        /// <summary>
-        /// Increment the HP of the entity.
-        /// </summary>
         public void Increment()
         {
             currentHP = Mathf.Clamp(currentHP + 1, 0, maxHP);
+            UpdateHealthBar(); // Update the health bar slider
         }
 
-        /// <summary>
-        /// Decrement the HP of the entity. Will trigger a HealthIsZero event when
-        /// current HP reaches 0.
-        /// </summary>
         public void Decrement()
         {
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+            UpdateHealthBar(); // Update the health bar slider
+
             if (currentHP == 0)
             {
-                var ev = Schedule<HealthIsZero>();
-                ev.health = this;
+                // Trigger death logic only when health reaches 0
+                Schedule<HealthIsZero>();
             }
         }
 
-        /// <summary>
-        /// Decrement the HP of the entitiy until HP reaches 0.
-        /// </summary>
         public void Die()
         {
-            while (currentHP > 0) Decrement();
+            currentHP = 0;
+            UpdateHealthBar();
+        }
+
+        public void ResetHealth() // Correctly defined method
+        {
+            currentHP = maxHP; // Reset health to maximum
+            UpdateHealthBar(); // Update the health bar slider
         }
 
         void Awake()
         {
-            currentHP = maxHP;
+            currentHP = maxHP; // Initialize health
+            if (healthBar != null)
+            {
+                healthBar.maxValue = maxHP; // Set max value of slider
+                healthBar.value = currentHP; // Initialize slider value
+            }
+        }
+
+        public void UpdateHealthBar()
+        {
+            if (healthBar != null)
+            {
+                healthBar.value = currentHP; // Sync slider with current HP
+            }
         }
     }
 }
+
