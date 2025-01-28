@@ -351,6 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552455764}
   - component: {fileID: 552455765}
+  - component: {fileID: 552455766}
   m_Layer: 0
   m_Name: BG2
   m_TagString: Untagged
@@ -367,8 +368,8 @@ Transform:
   m_GameObject: {fileID: 552455763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.7}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 106201791}
@@ -428,6 +429,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &552455766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552455763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb787e97067a4151b54c1fa117d5d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 235913427}
+  followTarget: {fileID: 534608312}
 --- !u!1 &949976281
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +456,7 @@ GameObject:
   - component: {fileID: 949976283}
   - component: {fileID: 949976282}
   m_Layer: 0
-  m_Name: CinemachineCamera
+  m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,6 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222983187}
   - component: {fileID: 1222983188}
+  - component: {fileID: 1222983189}
   m_Layer: 0
   m_Name: BG1
   m_TagString: Untagged
@@ -574,8 +590,8 @@ Transform:
   m_GameObject: {fileID: 1222983186}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.95}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 106201791}
@@ -635,6 +651,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1222983189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222983186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb787e97067a4151b54c1fa117d5d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 235913427}
+  followTarget: {fileID: 534608312}
 --- !u!1 &1302487803
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302487804}
   - component: {fileID: 1302487805}
+  - component: {fileID: 1302487806}
   m_Layer: 0
   m_Name: BG3
   m_TagString: Untagged
@@ -661,8 +692,8 @@ Transform:
   m_GameObject: {fileID: 1302487803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.4}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 106201791}
@@ -722,6 +753,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1302487806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302487803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb787e97067a4151b54c1fa117d5d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 235913427}
+  followTarget: {fileID: 534608312}
 --- !u!1001 &6209714997749442317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -813,7 +858,7 @@ PrefabInstance:
     - target: {fileID: 8954135115019028396, guid: a6f88b7e960b04670b5e198f3568e5ae,
         type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
