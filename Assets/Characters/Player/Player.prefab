@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
+  _isMoving: 0
+  _isRunning: 0
 --- !u!114 &8696139087000749653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +223,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7a69346e-4c50-47b7-a388-2146b2a5ce31
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 829308434917318611}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ffaf6fc5-4f6f-4f13-839e-342d10cb2bc6
+    m_ActionName: 'Player/Run[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -236,7 +254,7 @@ Animator:
   m_GameObject: {fileID: 391700138227005982}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe81395a900fb46a7943228b4ce71c14, type: 2}
+  m_Controller: {fileID: 9100000, guid: c8a9d98a4fad741a9bb6a3d8c0491d79, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
