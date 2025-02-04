@@ -1,24 +1,40 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))] // Ensure Rigidbody2D is added to the GameObject
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))] // Ensure Rigidbody2D is added to the GameObject
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f; // Walk speed
     public float runSpeed = 8f; // Run speed
+    public float airWalkSpeed = 3f; // Movement Speed while in Air
+
+    public float jumpImpulse = 10f; // Jump Impulse
     private Vector2 moveInput;
+    private TouchingDirections touchingDirections;
+
 
     public float CurrentMoveSpeed 
+{
+    get
     {
-        get
+        if (IsMoving && !touchingDirections.IsOnWall)
         {
-            if (IsMoving)
+            if (touchingDirections.IsGrounded)
             {
                 return IsRunning ? runSpeed : walkSpeed;
             }
+            else
+            {
+                return airWalkSpeed;
+            }
+        }
+        else
+        {
             return 0;
         }
     }
+}
+
 
     [SerializeField] private bool _isMoving = false;
     public bool IsMoving 
@@ -63,11 +79,14 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        touchingDirections = GetComponent<TouchingDirections>();
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.linearVelocity.y);
+
+        animator.SetFloat(AnimationStrings.yVelocity, rb.linearVelocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -105,6 +124,16 @@ public class PlayerController : MonoBehaviour
         else if (context.canceled)
         {
             IsRunning = false; // Stop running
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        // ToDo Chekc if Alive as well
+        if(context.started && touchingDirections.IsGrounded)
+        {
+                animator.SetTrigger(AnimationStrings.jump);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpImpulse);
         }
     }
 }

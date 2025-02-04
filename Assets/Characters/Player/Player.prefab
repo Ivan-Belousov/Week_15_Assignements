@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 8
+  jumpImpulse: 10
   _isMoving: 0
   _isRunning: 0
 --- !u!114 &8696139087000749653
@@ -242,6 +243,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ffaf6fc5-4f6f-4f13-839e-342d10cb2bc6
     m_ActionName: 'Player/Run[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 829308434917318611}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd6314cd-53a0-4a2b-b35f-541806bbe60c
+    m_ActionName: 'Player/Jump[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -318,3 +335,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1609c4911b5e4c98b02fdd7ebc5e216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  _isGrounded: 0
