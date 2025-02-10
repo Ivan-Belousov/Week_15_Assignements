@@ -12,29 +12,34 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private TouchingDirections touchingDirections;
 
-
     public float CurrentMoveSpeed 
-{
-    get
     {
-        if (IsMoving && !touchingDirections.IsOnWall)
+        get
         {
-            if (touchingDirections.IsGrounded)
+            if (CanMove)  // Check if the player can move
             {
-                return IsRunning ? runSpeed : walkSpeed;
-            }
+                if (IsMoving && !touchingDirections.IsOnWall)
+                {
+                    if (touchingDirections.IsGrounded)
+                    {
+                        return IsRunning ? runSpeed : walkSpeed;
+                    }
+                    else
+                    {
+                        return airWalkSpeed;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+            } 
             else
             {
-                return airWalkSpeed;
+                return 0;
             }
         }
-        else
-        {
-            return 0;
-        }
     }
-}
-
 
     [SerializeField] private bool _isMoving = false;
     public bool IsMoving 
@@ -61,15 +66,24 @@ public class PlayerController : MonoBehaviour
     private bool _isFacingRight = true;
     public bool IsFacingRight 
     { 
-        get => _isFacingRight;  // ✅ Fixed infinite recursion
+        get => _isFacingRight; 
         private set 
         {
             if (_isFacingRight != value)
             {
                 _isFacingRight = value;
-                Flip(); // ✅ Added a method for flipping instead of modifying scale directly
+                Flip();
             }
         } 
+    }
+
+    // Fixed the CanMove property here by adding missing closing braces
+    public bool CanMove 
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
     }
 
     private Rigidbody2D rb;
@@ -85,7 +99,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.linearVelocity.y);
-
         animator.SetFloat(AnimationStrings.yVelocity, rb.linearVelocity.y);
     }
 
@@ -108,7 +121,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Flip() // ✅ Flips the character smoothly
+    private void Flip()
     {
         Vector3 scale = transform.localScale;
         scale.x *= -1; // Flip only the X-axis
@@ -129,11 +142,19 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        // ToDo Chekc if Alive as well
-        if(context.started && touchingDirections.IsGrounded)
+        // ToDo: Check if Alive as well
+        if (context.started && touchingDirections.IsGrounded && CanMove)
         {
-                animator.SetTrigger(AnimationStrings.jump);
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpImpulse);
+            animator.SetTrigger(AnimationStrings.jumpTrigger); // ✅ Updated jump trigger
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpImpulse);
+        }
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            animator.SetTrigger(AnimationStrings.attackTrigger); // ✅ Updated attack trigger
         }
     }
 }
