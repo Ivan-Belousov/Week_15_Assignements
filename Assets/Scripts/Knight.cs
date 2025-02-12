@@ -5,8 +5,11 @@ using UnityEngine;
 public class Knight : MonoBehaviour
 {
     public float walkSpeed = 3f;
-    private Rigidbody2D rb;
-    private TouchingDirections touchingDirections;
+    public float walkStopRate = 0.05f;
+    public DetectionZone attackZone;
+    Rigidbody2D rb;
+    TouchingDirections touchingDirections;
+    Animator animator;
 
     public enum WalkableDirection { Right, Left }
     private WalkableDirection _walkDirection;
@@ -31,10 +34,36 @@ public class Knight : MonoBehaviour
         }
     }
 
+    public bool _hasTarget = false;
+
+    public bool HasTarget
+    {
+        get { return _hasTarget; }
+        private set
+        {
+            _hasTarget = value;
+            animator.SetBool(AnimationStrings.hasTarget, value);  // ✅ Correct reference
+        }
+    }
+
+    public bool canMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);  // ✅ Fixed typo here
+        }
+    }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        HasTarget = attackZone.detectedColliders.Count > 0;
     }
 
     private void FixedUpdate()
@@ -43,7 +72,10 @@ public class Knight : MonoBehaviour
         {
             FlipDirection();
         }
-        rb.linearVelocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.linearVelocity.y);
+        if (canMove)
+            rb.linearVelocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.linearVelocity.y);
+        else
+            rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, 0, walkStopRate), rb.linearVelocity.y);
     }
 
     private void FlipDirection()
@@ -68,4 +100,3 @@ public class Knight : MonoBehaviour
         }
     }
 }
-
