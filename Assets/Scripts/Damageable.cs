@@ -105,6 +105,7 @@ public class Damageable : MonoBehaviour
             
             IsHit = true;
             damageableHit?.Invoke(damage, knockback);
+            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
             return true;
         }
 

@@ -23,7 +23,7 @@ Changelog
 
 - Updated to Unity 6 Preview
 - Updated to Cinemachine 3
-
+    
 ## [4.0.2] - 2023-03-15
 
 ### Fixed
