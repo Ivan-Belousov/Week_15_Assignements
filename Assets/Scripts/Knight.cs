@@ -13,6 +13,8 @@ public class Knight : MonoBehaviour
     Animator animator;
     Damageable damageable;
 
+    private bool deathNotified = false;
+
     public enum WalkableDirection { Right, Left }
     private WalkableDirection _walkDirection;
     private Vector2 walkDirectionVector = Vector2.right; // Default direction
@@ -78,12 +80,27 @@ public class Knight : MonoBehaviour
 
     void Update()
     {
+        // Detect whether there's a target in the attack zone
         HasTarget = attackZone.detectedColliders.Count > 0;
-        if(AttackCooldown > 0)
+
+        // Reduce attack cooldown if it's active
+        if (AttackCooldown > 0)
         {
             AttackCooldown -= Time.deltaTime;
         }
-        
+
+        // --- NEW: Check if Knight has died ---
+        if (!damageable.IsAlive && !deathNotified)
+        {
+            deathNotified = true; // Avoid multiple notifications
+
+            // Find the GameManager and notify it
+            GameManager gm = FindAnyObjectByType<GameManager>(FindObjectsInactive.Include);
+            if (gm != null)
+            {
+                gm.EnemyDefeated();
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -133,3 +150,4 @@ public class Knight : MonoBehaviour
         }
     }
 }
+
