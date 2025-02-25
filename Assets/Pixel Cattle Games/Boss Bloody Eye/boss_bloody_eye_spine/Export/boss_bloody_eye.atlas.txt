@@ -1,0 +1,388 @@
+
+boss_bloody_eye.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_l_1
+  rotate: true
+  xy: 189, 84
+  size: 130, 135
+  orig: 130, 135
+  offset: 0, 0
+  index: -1
+arm_l_2
+  rotate: false
+  xy: 909, 867
+  size: 110, 155
+  orig: 110, 155
+  offset: 0, 0
+  index: -1
+arm_l_3
+  rotate: false
+  xy: 806, 349
+  size: 125, 105
+  orig: 125, 105
+  offset: 0, 0
+  index: -1
+arm_r_1
+  rotate: true
+  xy: 553, 385
+  size: 93, 97
+  orig: 93, 97
+  offset: 0, 0
+  index: -1
+arm_r_2
+  rotate: false
+  xy: 2, 2
+  size: 88, 80
+  orig: 88, 80
+  offset: 0, 0
+  index: -1
+arm_r_3
+  rotate: true
+  xy: 399, 265
+  size: 103, 117
+  orig: 103, 117
+  offset: 0, 0
+  index: -1
+attendant_1
+  rotate: false
+  xy: 909, 803
+  size: 70, 62
+  orig: 70, 62
+  offset: 0, 0
+  index: -1
+attendant_1_pupil
+  rotate: false
+  xy: 553, 370
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+attendant_2
+  rotate: false
+  xy: 722, 302
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+attendant_2_pupil
+  rotate: false
+  xy: 786, 345
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+body_1
+  rotate: false
+  xy: 652, 764
+  size: 255, 258
+  orig: 255, 258
+  offset: 0, 0
+  index: -1
+body_2
+  rotate: false
+  xy: 2, 86
+  size: 185, 265
+  orig: 185, 265
+  offset: 0, 0
+  index: -1
+body_eye
+  rotate: false
+  xy: 981, 835
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+body_eye_pupil
+  rotate: false
+  xy: 921, 755
+  size: 5, 7
+  orig: 5, 7
+  offset: 0, 0
+  index: -1
+body_luster
+  rotate: false
+  xy: 326, 84
+  size: 123, 130
+  orig: 123, 130
+  offset: 0, 0
+  index: -1
+body_pupil_1
+  rotate: false
+  xy: 518, 253
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+body_pupil_1_luster
+  rotate: false
+  xy: 931, 771
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+body_pupil_2
+  rotate: true
+  xy: 605, 277
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+eye_1
+  rotate: true
+  xy: 811, 610
+  size: 152, 108
+  orig: 152, 108
+  offset: 0, 0
+  index: -1
+eye_1_pupil
+  rotate: false
+  xy: 909, 764
+  size: 20, 37
+  orig: 20, 37
+  offset: 0, 0
+  index: -1
+eye_2
+  rotate: true
+  xy: 811, 456
+  size: 152, 108
+  orig: 152, 108
+  offset: 0, 0
+  index: -1
+eye_2_pupil
+  rotate: true
+  xy: 605, 255
+  size: 20, 37
+  orig: 20, 37
+  offset: 0, 0
+  index: -1
+eye_3
+  rotate: false
+  xy: 399, 370
+  size: 152, 108
+  orig: 152, 108
+  offset: 0, 0
+  index: -1
+head_1
+  rotate: false
+  xy: 652, 364
+  size: 152, 108
+  orig: 152, 108
+  offset: 0, 0
+  index: -1
+head_1_pupil
+  rotate: true
+  xy: 722, 280
+  size: 20, 37
+  orig: 20, 37
+  offset: 0, 0
+  index: -1
+head_2
+  rotate: false
+  xy: 189, 216
+  size: 195, 135
+  orig: 195, 135
+  offset: 0, 0
+  index: -1
+head_2_pupil_l
+  rotate: false
+  xy: 386, 343
+  size: 5, 8
+  orig: 5, 8
+  offset: 0, 0
+  index: -1
+head_2_pupil_r
+  rotate: false
+  xy: 568, 370
+  size: 5, 13
+  orig: 5, 13
+  offset: 0, 0
+  index: -1
+leg
+  rotate: false
+  xy: 2, 353
+  size: 395, 125
+  orig: 395, 125
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 652, 474
+  size: 288, 157
+  orig: 288, 157
+  offset: 0, 0
+  index: -1
+skill2_1
+  rotate: false
+  xy: 2, 480
+  size: 648, 542
+  orig: 648, 542
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill1_1
+  rotate: false
+  xy: 2, 511
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+skill1_2
+  rotate: false
+  xy: 2, 2
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill1_3
+  rotate: false
+  xy: 2, 511
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+skill1_4
+  rotate: false
+  xy: 2, 2
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye4.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill1_5
+  rotate: false
+  xy: 2, 511
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+skill1_6
+  rotate: false
+  xy: 2, 2
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye5.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill1_7
+  rotate: false
+  xy: 2, 511
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+skill1_8
+  rotate: false
+  xy: 2, 2
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye6.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill1_10
+  rotate: false
+  xy: 2, 2
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+skill1_9
+  rotate: false
+  xy: 2, 511
+  size: 560, 507
+  orig: 560, 507
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye7.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill2_2
+  rotate: false
+  xy: 2, 2
+  size: 648, 542
+  orig: 648, 542
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye8.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill2_3
+  rotate: false
+  xy: 2, 2
+  size: 648, 542
+  orig: 648, 542
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye9.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill2_4
+  rotate: false
+  xy: 2, 2
+  size: 648, 542
+  orig: 648, 542
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye10.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill2_5
+  rotate: false
+  xy: 2, 2
+  size: 648, 542
+  orig: 648, 542
+  offset: 0, 0
+  index: -1
+
+boss_bloody_eye11.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill2_6
+  rotate: false
+  xy: 2, 2
+  size: 648, 542
+  orig: 648, 542
+  offset: 0, 0
+  index: -1

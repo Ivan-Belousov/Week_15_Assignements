@@ -1,0 +1,429 @@
+
+boss_fire_dragon.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_l_1
+  rotate: false
+  xy: 182, 2
+  size: 73, 103
+  orig: 73, 103
+  offset: 0, 0
+  index: -1
+arm_l_2
+  rotate: false
+  xy: 471, 20
+  size: 62, 85
+  orig: 62, 85
+  offset: 0, 0
+  index: -1
+arm_r_1
+  rotate: true
+  xy: 369, 8
+  size: 45, 87
+  orig: 45, 87
+  offset: 0, 0
+  index: -1
+arm_r_2
+  rotate: false
+  xy: 479, 336
+  size: 35, 73
+  orig: 35, 73
+  offset: 0, 0
+  index: -1
+arm_r_3
+  rotate: true
+  xy: 916, 55
+  size: 55, 70
+  orig: 55, 70
+  offset: 0, 0
+  index: -1
+buttock
+  rotate: false
+  xy: 846, 48
+  size: 68, 62
+  orig: 68, 62
+  offset: 0, 0
+  index: -1
+head_2
+  rotate: false
+  xy: 96, 2
+  size: 84, 103
+  orig: 84, 103
+  offset: 0, 0
+  index: -1
+leg_l_1
+  rotate: true
+  xy: 369, 55
+  size: 50, 100
+  orig: 50, 100
+  offset: 0, 0
+  index: -1
+leg_l_2
+  rotate: true
+  xy: 916, 8
+  size: 45, 57
+  orig: 45, 57
+  offset: 0, 0
+  index: -1
+leg_l_3
+  rotate: true
+  xy: 774, 45
+  size: 65, 70
+  orig: 65, 70
+  offset: 0, 0
+  index: -1
+leg_r_1
+  rotate: false
+  xy: 535, 25
+  size: 65, 85
+  orig: 65, 85
+  offset: 0, 0
+  index: -1
+leg_r_3
+  rotate: true
+  xy: 602, 50
+  size: 60, 90
+  orig: 60, 90
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 257, 38
+  size: 110, 67
+  orig: 110, 67
+  offset: 0, 0
+  index: -1
+skill1_1
+  rotate: false
+  xy: 2, 107
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+skill1_2
+  rotate: false
+  xy: 519, 720
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+skill1_3
+  rotate: false
+  xy: 519, 416
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+skill1_4
+  rotate: false
+  xy: 519, 112
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+tail_1
+  rotate: true
+  xy: 694, 48
+  size: 62, 78
+  orig: 62, 78
+  offset: 0, 0
+  index: -1
+tail_2
+  rotate: true
+  xy: 602, 8
+  size: 40, 77
+  orig: 40, 77
+  offset: 0, 0
+  index: -1
+tail_4
+  rotate: true
+  xy: 2, 2
+  size: 103, 92
+  orig: 103, 92
+  offset: 0, 0
+  index: -1
+wing_l_1
+  rotate: false
+  xy: 2, 411
+  size: 515, 611
+  orig: 515, 611
+  offset: 0, 0
+  index: -1
+
+boss_fire_dragon2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_l_3
+  rotate: false
+  xy: 2, 2
+  size: 60, 62
+  orig: 60, 62
+  offset: 0, 0
+  index: -1
+leg_r_2
+  rotate: false
+  xy: 131, 16
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+skill1_5
+  rotate: false
+  xy: 2, 66
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+skill1_6
+  rotate: false
+  xy: 519, 679
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+skill1_7
+  rotate: false
+  xy: 519, 375
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+skill1_8
+  rotate: false
+  xy: 519, 71
+  size: 475, 302
+  orig: 475, 302
+  offset: 0, 0
+  index: -1
+tail_3
+  rotate: false
+  xy: 64, 9
+  size: 65, 55
+  orig: 65, 55
+  offset: 0, 0
+  index: -1
+wing_l_2
+  rotate: false
+  xy: 2, 370
+  size: 515, 611
+  orig: 515, 611
+  offset: 0, 0
+  index: -1
+
+boss_fire_dragon3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: true
+  xy: 578, 14
+  size: 143, 139
+  orig: 143, 139
+  offset: 0, 0
+  index: -1
+eye_1
+  rotate: false
+  xy: 194, 2
+  size: 190, 155
+  orig: 190, 155
+  offset: 0, 0
+  index: -1
+eye_2
+  rotate: false
+  xy: 2, 2
+  size: 190, 155
+  orig: 190, 155
+  offset: 0, 0
+  index: -1
+head_1
+  rotate: false
+  xy: 386, 2
+  size: 190, 155
+  orig: 190, 155
+  offset: 0, 0
+  index: -1
+skill2_l1
+  rotate: true
+  xy: 2, 197
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_l2
+  rotate: true
+  xy: 182, 197
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+wing_l_3
+  rotate: false
+  xy: 2, 398
+  size: 515, 611
+  orig: 515, 611
+  offset: 0, 0
+  index: -1
+wing_r_1
+  rotate: true
+  xy: 519, 727
+  size: 282, 475
+  orig: 282, 475
+  offset: 0, 0
+  index: -1
+wing_r_2
+  rotate: true
+  xy: 519, 443
+  size: 282, 475
+  orig: 282, 475
+  offset: 0, 0
+  index: -1
+wing_r_3
+  rotate: true
+  xy: 519, 159
+  size: 282, 475
+  orig: 282, 475
+  offset: 0, 0
+  index: -1
+
+boss_fire_dragon4.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill2_l3
+  rotate: true
+  xy: 2, 208
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_l4
+  rotate: true
+  xy: 2, 7
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_l5
+  rotate: true
+  xy: 182, 208
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_l6
+  rotate: true
+  xy: 182, 7
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_l7
+  rotate: true
+  xy: 362, 208
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_l8
+  rotate: true
+  xy: 362, 7
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_l9
+  rotate: true
+  xy: 519, 537
+  size: 199, 178
+  orig: 199, 178
+  offset: 0, 0
+  index: -1
+skill2_r1
+  rotate: false
+  xy: 699, 559
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+skill2_r2
+  rotate: false
+  xy: 699, 380
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+skill2_r3
+  rotate: true
+  xy: 542, 181
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+skill2_r4
+  rotate: false
+  xy: 542, 2
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+skill2_r5
+  rotate: true
+  xy: 721, 181
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+skill2_r6
+  rotate: false
+  xy: 741, 2
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+wing_l_4
+  rotate: false
+  xy: 2, 409
+  size: 515, 611
+  orig: 515, 611
+  offset: 0, 0
+  index: -1
+wing_r_4
+  rotate: true
+  xy: 519, 738
+  size: 282, 475
+  orig: 282, 475
+  offset: 0, 0
+  index: -1
+
+boss_fire_dragon5.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill2_r7
+  rotate: false
+  xy: 2, 2
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+skill2_r8
+  rotate: false
+  xy: 201, 2
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
+skill2_r9
+  rotate: false
+  xy: 400, 2
+  size: 197, 177
+  orig: 197, 177
+  offset: 0, 0
+  index: -1
