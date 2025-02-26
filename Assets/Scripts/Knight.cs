@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
-
 public class Knight : MonoBehaviour
 {
     public float walkSpeed = 3f;
@@ -31,7 +30,6 @@ public class Knight : MonoBehaviour
                     gameObject.transform.localScale.x * -1,
                     gameObject.transform.localScale.y
                 );
-
                 walkDirectionVector = (value == WalkableDirection.Right) ? Vector2.right : Vector2.left;
             }
             _walkDirection = value;
@@ -46,29 +44,20 @@ public class Knight : MonoBehaviour
         private set
         {
             _hasTarget = value;
-            animator.SetBool(AnimationStrings.hasTarget, value);  // ✅ Correct reference
+            animator.SetBool(AnimationStrings.hasTarget, value);
         }
     }
 
     public bool canMove
     {
-        get
-        {
-            return animator.GetBool(AnimationStrings.canMove);  // ✅ Fixed typo here
-        }
+        get { return animator.GetBool(AnimationStrings.canMove); }
     }
 
     public float AttackCooldown
-     { 
-        get
-        {
-            return animator.GetFloat(AnimationStrings.attackCooldown);
-        } 
-        private set
-        {
-            animator.SetFloat(AnimationStrings.attackCooldown, Mathf.Max(value, 0));
-        }
-     }
+    { 
+        get { return animator.GetFloat(AnimationStrings.attackCooldown); }
+        private set { animator.SetFloat(AnimationStrings.attackCooldown, Mathf.Max(value, 0)); }
+    }
 
     private void Awake()
     {
@@ -76,48 +65,6 @@ public class Knight : MonoBehaviour
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
         damageable = GetComponent<Damageable>();
-    }
-
-    void Update()
-    {
-        // Detect whether there's a target in the attack zone
-        HasTarget = attackZone.detectedColliders.Count > 0;
-
-        // Reduce attack cooldown if it's active
-        if (AttackCooldown > 0)
-        {
-            AttackCooldown -= Time.deltaTime;
-        }
-
-        // --- NEW: Check if Knight has died ---
-        if (!damageable.IsAlive && !deathNotified)
-        {
-            deathNotified = true; // Avoid multiple notifications
-
-            // Find the GameManager and notify it
-            GameManager gm = FindAnyObjectByType<GameManager>(FindObjectsInactive.Include);
-            if (gm != null)
-            {
-                gm.EnemyDefeated();
-            }
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (touchingDirections.IsGrounded && touchingDirections.IsOnWall)
-        {
-            FlipDirection();
-        }
-        if (canMove)
-            rb.linearVelocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.linearVelocity.y);
-        else
-            rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, 0, walkStopRate), rb.linearVelocity.y);
-    }
-
-    private void FlipDirection()
-    {
-        WalkDirection = (WalkDirection == WalkableDirection.Right) ? WalkableDirection.Left : WalkableDirection.Right;
     }
 
     void Start()
@@ -137,7 +84,52 @@ public class Knight : MonoBehaviour
         }
     }
 
-    public void OnHit(int damege, Vector2 knockback)
+    void Update()
+    {
+        // Detect whether there's a target in the attack zone
+        HasTarget = attackZone.detectedColliders.Count > 0;
+
+        // Reduce attack cooldown if it's active
+        if (AttackCooldown > 0)
+        {
+            AttackCooldown -= Time.deltaTime;
+        }
+
+        // Check if Knight has died
+        if (!damageable.IsAlive && !deathNotified)
+        {
+            deathNotified = true; // Avoid multiple notifications
+            GameManager gm = FindAnyObjectByType<GameManager>(FindObjectsInactive.Include);
+            if (gm != null)
+            {
+                gm.EnemyDefeated();
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // If the knight is in a hit state, skip the movement logic to preserve the knockback effect.
+        if (damageable.IsHit)
+            return;
+
+        if (touchingDirections.IsGrounded && touchingDirections.IsOnWall)
+        {
+            FlipDirection();
+        }
+
+        if (canMove && touchingDirections.IsGrounded)
+            rb.linearVelocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.linearVelocity.y);
+        else
+            rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, 0, walkStopRate), rb.linearVelocity.y);
+    }
+
+    private void FlipDirection()
+    {
+        WalkDirection = (WalkDirection == WalkableDirection.Right) ? WalkableDirection.Left : WalkableDirection.Right;
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
     {
         rb.linearVelocity = new Vector2(knockback.x, rb.linearVelocity.y + knockback.y);
     }
@@ -150,4 +142,5 @@ public class Knight : MonoBehaviour
         }
     }
 }
+
 
