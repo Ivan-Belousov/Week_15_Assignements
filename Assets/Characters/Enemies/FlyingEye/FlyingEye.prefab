@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8296114386736927937}
   - component: {fileID: 7846541760937197164}
   - component: {fileID: 8176060903229666300}
-  - component: {fileID: 2434498717091344497}
   - component: {fileID: 1375792740498877015}
   m_Layer: 8
   m_Name: FlyingEye
@@ -204,20 +203,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2434498717091344497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25586913104247858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab83aabf75db7478ca1d20cbcb920d7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 20
-  knockback: {x: 0, y: 0}
 --- !u!114 &1375792740498877015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb7766175e0a49eb9c416d90b7c8275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biteDetectionZone: {fileID: 5012950818219543243}
+  biteDetectionZone: {fileID: 8722488381575088580}
   _hasTarget: 0
 --- !u!1 &192659960830132635
 GameObject:
@@ -242,7 +227,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8919113226944084988}
   - component: {fileID: 8742089669582381724}
-  m_Layer: 8
+  - component: {fileID: 2757093110211347147}
+  m_Layer: 10
   m_Name: BiteAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +257,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192659960830132635}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -301,6 +287,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.23478603, y: -0.317827}
   m_Size: {x: 0.8234825, y: 0.82348275}
   m_Direction: 0
+--- !u!114 &2757093110211347147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192659960830132635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab83aabf75db7478ca1d20cbcb920d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  knockback: {x: 0, y: 0}
 --- !u!1 &7122777364037835795
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,8 +310,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8512328236871263179}
-  - component: {fileID: 5012950818219543243}
   - component: {fileID: 4838247471459361139}
+  - component: {fileID: 8722488381575088580}
   m_Layer: 10
   m_Name: AttackDetectionZone
   m_TagString: Untagged
@@ -334,22 +334,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4153739521433494807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5012950818219543243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7122777364037835795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eabf7327953254a01bd9cd9e38ec935a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  noCollidersRemain:
-    m_PersistentCalls:
-      m_Calls: []
-  detectedColliders: []
 --- !u!70 &4838247471459361139
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -387,3 +371,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.032, y: 0.0052}
   m_Size: {x: 1.25, y: 1.2918}
   m_Direction: 0
+--- !u!114 &8722488381575088580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122777364037835795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabf7327953254a01bd9cd9e38ec935a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noCollidersRemain:
+    m_PersistentCalls:
+      m_Calls: []
+  detectedColliders: []
