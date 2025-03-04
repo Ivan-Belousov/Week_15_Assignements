@@ -63,6 +63,11 @@ public class FlyingEye : MonoBehaviour
                 rb.linearVelocity = Vector3.zero;
             }
         }
+        else
+        {
+            rb.gravityScale = 2f;
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
     } 
 
     private void Flight()

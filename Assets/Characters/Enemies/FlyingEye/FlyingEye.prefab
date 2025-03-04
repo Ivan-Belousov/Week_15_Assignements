@@ -216,6 +216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   biteDetectionZone: {fileID: 8722488381575088580}
+  flightSpeed: 2
+  waypoints: []
+  WaypointReachedDistance: 0.1
   _hasTarget: 0
 --- !u!1 &192659960830132635
 GameObject:
