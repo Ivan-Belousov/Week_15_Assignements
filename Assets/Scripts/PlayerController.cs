@@ -7,11 +7,12 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 5f; // Walk speed
     public float runSpeed = 8f; // Run speed
     public float airWalkSpeed = 3f; // Movement Speed while in Air
-
     public float jumpImpulse = 10f; // Jump Impulse
+
     private Vector2 moveInput;
     private TouchingDirections touchingDirections;
-    Damageable damageable;
+    private Damageable damageable;
+    private GameManager gameManager;
 
     public float CurrentMoveSpeed 
     {
@@ -104,6 +105,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     private void FixedUpdate()
@@ -189,4 +191,29 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(knockback.x, rb.linearVelocity.y + knockback.y);
     }
+
+
+    // ============================ GAME OVER LOGIC ============================ //
+    
+    public void Die()
+    {
+        Debug.Log($"{name} PlayerController.Die() called. isAlive was {IsAlive}");
+        if (IsAlive)
+        {
+            animator.SetBool(AnimationStrings.isAlive, false); // Mark player as dead
+            animator.SetTrigger("Death"); // Trigger death animation
+
+            // Stop movement
+            moveInput = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
+
+            // Call Game Over screen from GameManager
+            if (gameManager != null)
+            {
+                Debug.Log("Calling gameManager.TriggerGameOver()");
+                gameManager.TriggerGameOver();
+            }
+        }
+    }
+
 }

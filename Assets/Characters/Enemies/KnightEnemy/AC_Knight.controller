@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 0.5
+  fadeDelay: 0
 --- !u!1101 &-1779373484323086166
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

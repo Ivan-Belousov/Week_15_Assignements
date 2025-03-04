@@ -8,6 +8,7 @@ public class FlyingEye : MonoBehaviour
     public float flightSpeed = 2f;
     public List<Transform> waypoints;
     public float WaypointReachedDistance = 0.1f; 
+    private bool deathNotified = false;
     Animator animator;
     Rigidbody2D rb;
     Damageable damageable;
@@ -47,6 +48,16 @@ public class FlyingEye : MonoBehaviour
     void Update()
     {
         HasTarget = biteDetectionZone.detectedColliders.Count > 0;
+
+        if(!damageable.IsAlive && !deathNotified)
+        {
+            deathNotified = true;
+            GameManager gm = FindAnyObjectByType<GameManager>(FindObjectsInactive.Include);
+            if (gm != null)
+            {
+                gm.EnemyDefeated();
+            }
+        }
     }
 
     private void FixedUpdate()

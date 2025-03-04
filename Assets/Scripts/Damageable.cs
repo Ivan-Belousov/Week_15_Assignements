@@ -40,7 +40,15 @@ public class Damageable : MonoBehaviour
 
             if(_health <= 0)
             {
+                PlayerController player = GetComponent<PlayerController>();
+                if (player != null)
+                {
+                    player.Die();
+                }
+
+                // Then set IsAlive = false
                 IsAlive = false;
+
             }
         }
     }
